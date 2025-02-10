@@ -28,7 +28,8 @@ const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
     origin: ['https://event-platform-frontend.onrender.com',
-'http://localhost:3000'
+'http://localhost:3000',
+'https://event-platform-frontend-azure.vercel.app/login'
      ] ,// For development; restrict this in production
     methods: ['GET', 'POST'],
     credentials: true,
@@ -40,7 +41,8 @@ app.set('io', io);
 app.use(express.json()); // Parse JSON bodies
 app.use(cors({
   origin:  ['https://event-platform-frontend.onrender.com',
-    'http://localhost:3000'
+    'http://localhost:3000',
+    'https://event-platform-frontend-azure.vercel.app/login'
    ] , // Allow only your frontend origin
   credentials: true, // Allow cookies and auth headers
 })); // Enable CORS for all origins

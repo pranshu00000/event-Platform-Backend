@@ -27,7 +27,9 @@ const server = http.createServer(app);
 // Set up Socket.IO with CORS configuration
 const io = socketIo(server, {
   cors: {
-    origin: 'https://event-platform-frontend.onrender.com', // For development; restrict this in production
+    origin: ['https://event-platform-frontend.onrender.com',
+'http://localhost:5173'
+     ] ,// For development; restrict this in production
     methods: ['GET', 'POST'],
     credentials: true,
   },
@@ -37,7 +39,9 @@ app.set('io', io);
 // Middleware
 app.use(express.json()); // Parse JSON bodies
 app.use(cors({
-  origin: 'https://event-platform-frontend.onrender.com', // Allow only your frontend origin
+  origin:  ['https://event-platform-frontend.onrender.com',
+    'http://localhost:5173'
+   ] , // Allow only your frontend origin
   credentials: true, // Allow cookies and auth headers
 })); // Enable CORS for all origins
 

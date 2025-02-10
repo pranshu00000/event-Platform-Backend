@@ -39,6 +39,7 @@ const registerUser = async (req, res) => {
          role: user.role
        });
   } catch (err) {
+    console.error('Registration Error:', err);
     res.status(500).json({ message: 'Server Error',err });
   }
 };

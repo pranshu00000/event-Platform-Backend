@@ -6,7 +6,7 @@ const User = require('../models/User');
 const cookieOptions = {
   httpOnly: true,
   secure: 'production', // HTTPS only in production
-  sameSite: 'Lax',
+  sameSite: 'none',
   maxAge: 24 * 60 * 60 * 1000 // 1 hour in milliseconds
 };
 
